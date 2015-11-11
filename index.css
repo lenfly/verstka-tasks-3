@@ -1,0 +1,104 @@
+a,h1,p,*
+{
+    color: #757373;
+}
+
+a:
+{
+    color: brown;
+}
+
+a:visited 
+{
+    color: #757373;
+}
+
+input:focus
+{
+    background: #ffb580;
+}
+
+table
+{
+    position: relative;
+}
+
+tbody
+{
+    position: relative;
+}
+
+th/*Ячейки шапки*/
+{
+    text-align: center; /* Выравнивание текста по левому краю */
+    color: #5e5c5c;
+    background: #ffb580; /* Цвет заднего фона */
+    padding: 5px; /* Поля вокруг текста */
+    position: relative;
+    /*border: 1px solid #000; /* Параметры рамки вокруг таблицы */
+}
+
+td/*Ячейки тела*/
+{
+    text-align: center;
+    padding: 3px; /* Поля вокруг текста */
+    position: relative;
+    /*border: 1px solid #000;  /* Параметры рамки вокруг таблицы */
+}
+
+tr:nth-child(even) td::after
+{
+    content: '';
+    display: block;
+    position: absolute;
+    background-color: #f0eeeb;
+    width: 100%; 
+    height: 100%;
+    top: 0;
+    left: 0; 
+    z-index: -2;
+}
+
+/*Строки*/
+tbody tr:hover::after
+{
+    content: '';
+    display: block;
+    position: absolute;
+    opacity: 0.2;
+    background-color: #ffb580;
+    width: 100%; 
+    height: 6.2%;
+    left: 0; 
+    z-index: -1;
+}
+
+/*Столбцы*/
+table td:hover::after
+{
+    content: '';
+    display: block;
+    position: absolute;
+    opacity: 0.2;
+    background-color: blue;
+    width: 100%; 
+    height: 1750px;
+    top: -1000px; 
+    left: 0; 
+    z-index: -1;
+}
+
+[name="all"]:active
+{
+    background: #ffb580
+}
+
+[name="depart"]:active
+{
+    background: #ffb580
+}
+
+[name="arrival"]:active
+{
+    background: #ffb580
+}

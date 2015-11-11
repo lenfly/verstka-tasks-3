@@ -6,13 +6,219 @@
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
-        <!-- Поле для фильтрации по городу -->
-        <input
-            type="text"
-            placeholder="Город отправления"
-            value=""
-            onkeyup="this.setAttribute('value', this.value)">
-
-        <!-- Здесь применять вашу самую сильную магию -->
+        <header>
+            <img src="http://svo.aero/f/1/global/i/logo.png" alt="Лого">
+            <h1>Онлайн-табло рейсов</h1>
+        </header>
+        <section>
+            <p><a target="_blanc" href="http://www.flightradar24.com/55.84,37.38/7">Флайтрадар</a></p>
+            <button type="button" name="all">Все</button>
+            <button type="button" name="depart">Вылет</button>
+            <button type="button" name="arrival">Прилет</button>
+            <!-- Поле для фильтрации по городу -->
+            <input
+                type="text"
+                placeholder="Город отправления"
+                value=""
+                onkeyup="this.setAttribute('value', this.value)">
+            <!-- Здесь применять вашу самую сильную магию -->
+            <p></p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>тип рейса</th>
+                        <th>номер рейса</th>
+                        <th>авиакомпания</th>
+                        <th>логотип авиакомпании</th>
+                        <th>тип воздушного судна</th>
+                        <th>направление</th>
+                        <th>плановое время</th>
+                        <th>номер терминала</th>
+                        <th>статус рейса на данный момент</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src='https://clck.ru/9by6Z' width="20" alt="Лого Вылет"></td>
+                        <td>3256</td>
+                        <td>British Airways</td>
+                        <td><img src='https://clck.ru/9btWt' width="80" alt="Лого British Airways<"></td>
+                        <td>A-319</td>
+                        <td>Лондон</td>
+                        <td>17:45</td>
+                        <td>A</td>
+                        <td><em>Посадка закончена</em></td>
+                    </tr>
+                    <tr>
+                        <td><img src='https://clck.ru/9by6e' width="20" alt="Лого Прилет"></td>
+                        <td>1157</td>
+                        <td>Air France</td>
+                        <td><img src='https://clck.ru/9bTHm' width="80" alt="Лого Air France"></td>
+                        <td>A-320</td>
+                        <td>Париж</td>
+                        <td>17:55</td>
+                        <td>A</td>
+                        <td><em>Ожидается в 18:00</em></td>
+                    </tr>
+                    <tr>
+                        <td><img src='https://clck.ru/9by6e' width="20" alt="Лого Прилет"></td>
+                        <td>1363</td>
+                        <td>Air France</td>
+                        <td><img src='https://clck.ru/9bTHm' width="80" alt="Лого Air France"></td>
+                        <td>A-320</td>
+                        <td>Париж</td>
+                        <td>17:55</td>
+                        <td>A</td>
+                        <td><em>Ожидается в 18:00</em></td>
+                    </tr>
+                    <tr>
+                        <td><img src='https://clck.ru/9by6e' width="20" alt="Лого Прилет"></td>
+                        <td>3507</td>
+                        <td>Ural Airlines</td>
+                        <td><img src='https://clck.ru/9bTGr' width="80" alt="Лого Ural Airlines"></td>
+                        <td>A-319</td>
+                        <td>Екатеринбург</td>
+                        <td>18:00</td>
+                        <td>B</td>
+                        <td><em>Ожидается в 18:00</em></td>
+                    </tr>
+                    <tr>
+                        <td><img src='https://clck.ru/9by6Z' width="20" alt="Лого Вылет"></td>
+                        <td>205</td>
+                        <td>Победа</td>
+                        <td><img src='https://clck.ru/9bTHh' width="80" alt="Лого Победа"></td>
+                        <td>B-737-800W</td>
+                        <td>Сочи</td>
+                        <td>18:10</td>
+                        <td>B</td>
+                        <td><em>Посадка закончена</em></td>
+                    </tr>
+                    <tr>
+                        <td><img src='https://clck.ru/9by6Z' width="20" alt="Лого Вылет"></td>
+                        <td>3505</td>
+                        <td>Aegean Airlines</td>
+                        <td><img src='https://clck.ru/9btYF' width="80" alt="Лого Aegean Airlines"></td>
+                        <td>A-319</td>
+                        <td>Екатеринбург</td>
+                        <td>18:15</td>
+                        <td>B</td>
+                        <td><em>Посадка закончена</em></td>
+                    </tr>
+                    <tr>
+                        <td><img src='https://clck.ru/9by6Z' width="20" alt="Лого Вылет"></td>
+                        <td>6839</td>
+                        <td>ЮТэйр</td>
+                        <td><img src='https://clck.ru/9btYD' width="80" alt="Лого ЮТэйр"></td>
+                        <td>AT-72-5</td>
+                        <td>Самара</td>
+                        <td>18:20</td>
+                        <td>C</td>
+                        <td><em>Идет посадка</em></td>
+                    </tr>
+                    <tr>
+                        <td><img src='https://clck.ru/9by6e' width="20" alt="Лого Прилет"></td>
+                        <td>1605</td>
+                        <td>Finnair</td>
+                        <td><img src='https://clck.ru/9btXk' width="80" alt="Лого Finnair"></td>
+                        <td>EMB-190</td>
+                        <td>Хельсинки</td>
+                        <td>18:30</td>
+                        <td>A</td>
+                        <td><em>Ожидается в 18:30</em></td>
+                    </tr>
+                    <tr>
+                        <td><img src='https://clck.ru/9by6e' width="20" alt="Лого Прилет"></td>
+                        <td>30</td>
+                        <td>Ural Airlines</td>
+                        <td><img src='https://clck.ru/9bTGr' width="80" alt="Лого Ural Airlines"></td>
+                        <td>A-320</td>
+                        <td>Ереван</td>
+                        <td>18:35</td>
+                        <td>A</td>
+                        <td><em>Ожидается в 18:40</em></td>
+                    </tr>
+                    <tr>
+                        <td><img src='https://clck.ru/9by6Z' width="20" alt="Лого Вылет"></td>
+                        <td>299</td>
+                        <td>Ural Airlines</td>
+                        <td><img src='https://clck.ru/9bTGr' width="80" alt="Лого Ural Airlines"></td>
+                        <td>A-321</td>
+                        <td>Бишкек</td>
+                        <td>18:40</td>
+                        <td>A</td>
+                        <td><em>Идет посадка</em></td>
+                    </tr>
+                    <tr>
+                        <td><img src='https://clck.ru/9by6e' width="20" alt="Лого Прилет"></td>
+                        <td>9055</td>
+                        <td>Czech Airlines</td>
+                        <td><img src='https://clck.ru/9btY7' width="80" alt="Лого Czech Airlines "></td>
+                        <td>A-320</td>
+                        <td>Прага</td>
+                        <td>18:50</td>
+                        <td>A</td>
+                        <td><em>Ожидается в 18:50</em></td>
+                    </tr>
+                    <tr>
+                        <td><img src='https://clck.ru/9by6e' width="20" alt="Лого Прилет"></td>
+                        <td>124</td>
+                        <td>Аэрофлот</td>
+                        <td><img src='https://clck.ru/9btWh' width="80" alt="Лого Аэрофлот"></td>
+                        <td>A-320</td>
+                        <td>Санкт-Петербург</td>
+                        <td>18:55</td>
+                        <td>F</td>
+                        <td><em>Ожидается в 18:50</em></td>
+                    </tr>
+                    <tr>
+                        <td><img src='https://clck.ru/9by6Z' width="20" alt="Лого Вылет"></td>
+                        <td>749</td>
+                        <td>El Al</td>
+                        <td><img src='https://clck.ru/9btY2' width="80" alt="Лого El Al"></td>
+                        <td>A-319</td>
+                        <td>Екатеринбург</td>
+                        <td>19:00</td>
+                        <td>B</td>
+                        <td><em>Регистрация 101–110</em></td>
+                    </tr>
+                    <tr>
+                        <td><img src='https://clck.ru/9by6Z' width="20" alt="Лого Вылет"></td>
+                        <td>3516</td>
+                        <td>Аэрофлот</td>
+                        <td><img src='https://clck.ru/9btWh' width="80" alt="Лого Аэрофлот"></td>
+                        <td>A-320</td>
+                        <td>Новосибирск</td>
+                        <td>19:05</td>
+                        <td>B</td>
+                        <td><em>Регистрация 115–116</em></td>
+                    </tr>
+                    <tr>
+                        <td><img src='https://clck.ru/9by6e' width="20" alt="Лого Прилет"></td>
+                        <td>6405</td>
+                        <td>Аэрофлот</td>
+                        <td><img src='https://clck.ru/9btWh' width="80" alt="Лого Аэрофлот"></td>
+                        <td>A-320</td>
+                        <td>Улан-Удэ</td>
+                        <td>19:15</td>
+                        <td>B</td>
+                        <td><em>Ожидается в 19:15</em></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p><strong>Введите ваши данные для получения информации о рейсе:</strong></p>
+            <form method="post">
+                <input
+                    type="email"
+                    placeholder="email"
+                    required>
+                <input
+                    type="tel" pattern="+7([0-9]{3})[0-9]{3}-[0-9]{2}-[0-9]{2}"
+                    placeholder="+7(ХХХ)ХХХ-ХХ-ХХ"
+                    required>
+                <button type="submit">Отправить данные о рейсе на телефон</button>
+            </form>
+        </section>
+        <footer>
+        </footer>
     </body>
 </html>
