@@ -13,7 +13,7 @@ a:visited
     color: #757373;
 }
 
-/*Подсветка строк и столбцов таблицы*/
+/*РџРѕРґСЃРІРµС‚РєР° СЃС‚СЂРѕРє Рё СЃС‚РѕР»Р±С†РѕРІ С‚Р°Р±Р»РёС†С‹*/
 table
 {
     overflow: hidden;
@@ -24,21 +24,19 @@ tbody
     position: relative;
 }
 
-th/*Ячейки шапки*/
+th/*РЇС‡РµР№РєРё С€Р°РїРєРё*/
 {
-    text-align: center; /* Выравнивание текста по левому краю */
+    text-align: center; 
     color: #5e5c5c;
-    background: #ffb580; /* Цвет заднего фона */
-    padding: 5px; /* Поля вокруг текста */
-    /*border: 1px solid #000; /* Параметры рамки вокруг таблицы */
+    background: #ffb580; 
+    padding: 5px; 
 }
 
-td/*Ячейки tbody*/
+td/*РЇС‡РµР№РєРё tbody*/
 {
     text-align: center;
-    padding: 3px; /* Поля вокруг текста */
+    padding: 3px; 
     position: relative;
-    /*border: 1px solid #000;  /* Параметры рамки вокруг таблицы */
 }
 
 tr:nth-child(even)
@@ -46,8 +44,7 @@ tr:nth-child(even)
     background: #f0eeeb;
 }
 
-/*Строки*/
-tbody tr:hover::after
+tbody tr:hover::after/*РЎС‚СЂРѕРєРё*/
 {
     content: '';
     display: block;
@@ -59,8 +56,7 @@ tbody tr:hover::after
     z-index: -2;
 }
 
-/*Столбцы*/
-td:hover::after
+td:hover::after/*РЎС‚РѕР»Р±С†С‹*/
 {
     content: '';
     display: block;
@@ -71,7 +67,7 @@ td:hover::after
     z-index: -1;
 }
 
-/*Подсветка полей ввода*/
+/*РџРѕРґСЃРІРµС‚РєР° РїРѕР»РµР№ РІРІРѕРґР°*/
 input[tabindex="1"]:focus
 {
     background: #fce5c7;
@@ -89,7 +85,7 @@ input#inputTel:valid
     background: #fce5c7;
 }
 
-/*Фильтрация при выборе типа рейса*/
+/*Р¤РёР»СЊС‚СЂР°С†РёСЏ РїСЂРё РІС‹Р±РѕСЂРµ С‚РёРїР° СЂРµР№СЃР°*/
 input[name="flightType"]
 {
     display: none;
@@ -136,7 +132,7 @@ input#arrival:checked ~ table tr.trArrival
     display: none;
 }
 
-/*Блокировка кнопки отправки данных*/
+/*Р‘Р»РѕРєРёСЂРѕРІРєР° РєРЅРѕРїРєРё РѕС‚РїСЂР°РІРєРё РґР°РЅРЅС‹С…*/
 button#submitButton
 {
     display:none;
@@ -167,19 +163,19 @@ input#inputTel:valid + label.submitButton
     color: red;
 }
 
-/*Фильтрация по городу*/
-.city[value="Лондон"] ~ table tbody tr:not([distCity="London"]),
-.city[value="Париж"] ~ table tbody tr:not([distCity="Paris"]),
-.city[value="Екатеринбург"] ~ table tbody tr:not([distCity="Yekaterinburg"]),
-.city[value="Сочи"] ~ table tbody tr:not([distCity="Sochi"]),
-.city[value="Самара"] ~ table tbody tr:not([distCity="Samara"]),
-.city[value="Хельсинки"] ~ table tbody tr:not([distCity="Helsinki"]),
-.city[value="Ереван"] ~ table tbody tr:not([distCity="Yerevan"]),
-.city[value="Бишкек"] ~ table tbody tr:not([distCity="Bishkek"]),
-.city[value="Прага"] ~ table tbody tr:not([distCity="Prague"]),
-.city[value="Санкт-Петербург"] ~ table tbody tr:not([distCity="Sankt-Peterburg"]),
-.city[value="Новосибирск"] ~ table tbody tr:not([distCity="Novosibirsk"]),
-.city[value="Улан-Удэ"] ~ table tbody tr:not([distCity="Ulan-Ude"])
+/*Р¤РёР»СЊС‚СЂР°С†РёСЏ РїРѕ РіРѕСЂРѕРґСѓ*/
+.city[value="Р›РѕРЅРґРѕРЅ"] ~ table tbody tr:not([distCity="London"]),
+.city[value="РџР°СЂРёР¶"] ~ table tbody tr:not([distCity="Paris"]),
+.city[value="Р•РєР°С‚РµСЂРёРЅР±СѓСЂРі"] ~ table tbody tr:not([distCity="Yekaterinburg"]),
+.city[value="РЎРѕС‡Рё"] ~ table tbody tr:not([distCity="Sochi"]),
+.city[value="РЎР°РјР°СЂР°"] ~ table tbody tr:not([distCity="Samara"]),
+.city[value="РҐРµР»СЊСЃРёРЅРєРё"] ~ table tbody tr:not([distCity="Helsinki"]),
+.city[value="Р•СЂРµРІР°РЅ"] ~ table tbody tr:not([distCity="Yerevan"]),
+.city[value="Р‘РёС€РєРµРє"] ~ table tbody tr:not([distCity="Bishkek"]),
+.city[value="РџСЂР°РіР°"] ~ table tbody tr:not([distCity="Prague"]),
+.city[value="РЎР°РЅРєС‚-РџРµС‚РµСЂР±СѓСЂРі"] ~ table tbody tr:not([distCity="Sankt-Peterburg"]),
+.city[value="РќРѕРІРѕСЃРёР±РёСЂСЃРє"] ~ table tbody tr:not([distCity="Novosibirsk"]),
+.city[value="РЈР»Р°РЅ-РЈРґСЌ"] ~ table tbody tr:not([distCity="Ulan-Ude"])
 {
     display: none;
 }
