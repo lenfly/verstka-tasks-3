@@ -1,4 +1,4 @@
-a,h1,p,*
+*
 {
     color: #757373;
 }
@@ -13,14 +13,10 @@ a:visited
     color: #757373;
 }
 
-input:focus
-{
-    background: #ffb580;
-}
-
+/*Подсветка строк и столбцов таблицы*/
 table
 {
-    position: relative;
+    overflow: hidden;
 }
 
 tbody
@@ -34,11 +30,10 @@ th/*Ячейки шапки*/
     color: #5e5c5c;
     background: #ffb580; /* Цвет заднего фона */
     padding: 5px; /* Поля вокруг текста */
-    position: relative;
     /*border: 1px solid #000; /* Параметры рамки вокруг таблицы */
 }
 
-td/*Ячейки тела*/
+td/*Ячейки tbody*/
 {
     text-align: center;
     padding: 3px; /* Поля вокруг текста */
@@ -46,17 +41,9 @@ td/*Ячейки тела*/
     /*border: 1px solid #000;  /* Параметры рамки вокруг таблицы */
 }
 
-tr:nth-child(even) td::after
+tr:nth-child(even)
 {
-    content: '';
-    display: block;
-    position: absolute;
-    background-color: #f0eeeb;
-    width: 100%; 
-    height: 100%;
-    top: 0;
-    left: 0; 
-    z-index: -2;
+    background: #f0eeeb;
 }
 
 /*Строки*/
@@ -65,40 +52,134 @@ tbody tr:hover::after
     content: '';
     display: block;
     position: absolute;
-    opacity: 0.2;
-    background-color: #ffb580;
+    background-color: #fce5c7;
     width: 100%; 
-    height: 6.2%;
-    left: 0; 
-    z-index: -1;
+    height: 35px;
+    left: 0;
+    z-index: -2;
 }
 
 /*Столбцы*/
-table td:hover::after
+td:hover::after
 {
     content: '';
     display: block;
     position: absolute;
-    opacity: 0.2;
-    background-color: blue;
-    width: 100%; 
-    height: 1750px;
-    top: -1000px; 
-    left: 0; 
+    background-color: #fce5c7;
+    width: 100%;
+    height: 550px;
     z-index: -1;
 }
 
-[name="all"]:active
+/*Подсветка полей ввода*/
+input[tabindex="1"]:focus
 {
-    background: #ffb580
+    background: #fce5c7;
 }
 
-[name="depart"]:active
+input#inputEmail:invalid,
+input#inputTel:invalid
 {
-    background: #ffb580
+    background: #fdd;
 }
 
-[name="arrival"]:active
+input#inputEmail:valid,
+input#inputTel:valid
 {
-    background: #ffb580
+    background: #fce5c7;
+}
+
+/*Фильтрация при выборе типа рейса*/
+input[name="flightType"]
+{
+    display: none;
+}
+
+label[class="all"],
+label[class="depart"],
+label[class="arrival"]
+{
+    display: inline-block;
+    margin: 3px;
+    padding: 4px;
+    text-transform: capitalize; 
+    border: 2px solid #bbb;
+    border-radius: 5px;
+    box-shadow: 0 1px 0 #bbb;
+}
+
+input[name="flightType"]:not(:checked) + label
+{
+    background: #fafafa;
+    box-shadow: none;
+    margin: 5px 3p 1px;
+}
+
+.all
+{
+    background-color: #fac289;
+}
+
+.depart
+{
+    background-color: #fac289;
+}
+
+.arrival
+{
+    background-color: #fac289;
+}
+
+input#depart:checked ~ table tr.trDepart,
+input#arrival:checked ~ table tr.trArrival
+{
+    display: none;
+}
+
+/*Блокировка кнопки отправки данных*/
+button#submitButton
+{
+    display:none;
+}
+
+label[class="submitButton"]
+{
+    display: inline-block;
+    margin: 2px;
+    padding: 4px;
+    background-color: #dedede;
+    text-transform: capitalize; 
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    box-shadow: 0 1px 0 #bbb;
+}
+
+input#inputEmail:invalid ~ label.submitButton,
+input#inputTel:invalid ~ label.submitButton
+{
+    color: #fafafa;
+    display: hidden;
+}
+
+input#inputEmail:valid + label.submitButton,
+input#inputTel:valid + label.submitButton
+{
+    color: red;
+}
+
+/*Фильтрация по городу*/
+.city[value="Лондон"] ~ table tbody tr:not([distCity="London"]),
+.city[value="Париж"] ~ table tbody tr:not([distCity="Paris"]),
+.city[value="Екатеринбург"] ~ table tbody tr:not([distCity="Yekaterinburg"]),
+.city[value="Сочи"] ~ table tbody tr:not([distCity="Sochi"]),
+.city[value="Самара"] ~ table tbody tr:not([distCity="Samara"]),
+.city[value="Хельсинки"] ~ table tbody tr:not([distCity="Helsinki"]),
+.city[value="Ереван"] ~ table tbody tr:not([distCity="Yerevan"]),
+.city[value="Бишкек"] ~ table tbody tr:not([distCity="Bishkek"]),
+.city[value="Прага"] ~ table tbody tr:not([distCity="Prague"]),
+.city[value="Санкт-Петербург"] ~ table tbody tr:not([distCity="Sankt-Peterburg"]),
+.city[value="Новосибирск"] ~ table tbody tr:not([distCity="Novosibirsk"]),
+.city[value="Улан-Удэ"] ~ table tbody tr:not([distCity="Ulan-Ude"])
+{
+    display: none;
 }

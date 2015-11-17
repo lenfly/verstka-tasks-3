@@ -12,17 +12,21 @@
         </header>
         <section>
             <p><a target="_blanc" href="http://www.flightradar24.com/55.84,37.38/7">Флайтрадар</a></p>
-            <button type="button" name="all">Все</button>
-            <button type="button" name="depart">Вылет</button>
-            <button type="button" name="arrival">Прилет</button>
+            <input type="radio" name="flightType" id="all" checked>
+            <label for="all" class="all">Все</label>
+            <input type="radio" name="flightType" id="depart">
+            <label for="depart" class="depart">Вылет</label>
+            <input type="radio" name="flightType" id="arrival">
+            <label for="arrival" class="arrival">Прилет</label>
             <!-- Поле для фильтрации по городу -->
             <input
+                tabindex="1"
+                class="city"
                 type="text"
                 placeholder="Город отправления"
                 value=""
                 onkeyup="this.setAttribute('value', this.value)">
             <!-- Здесь применять вашу самую сильную магию -->
-            <p></p>
             <table>
                 <thead>
                     <tr>
@@ -38,7 +42,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr class="trDepart" distCity="London">
                         <td><img src="https://clck.ru/9by6Z" width="20" alt="Лого Вылет"></td>
                         <td>3256</td>
                         <td>British Airways</td>
@@ -49,7 +53,7 @@
                         <td>A</td>
                         <td><em>Посадка закончена</em></td>
                     </tr>
-                    <tr>
+                    <tr class="trArrival" distCity="Paris">
                         <td><img src="https://clck.ru/9by6e" width="20" alt="Лого Прилет"></td>
                         <td>1157</td>
                         <td>Air France</td>
@@ -60,7 +64,7 @@
                         <td>A</td>
                         <td><em>Ожидается в 18:00</em></td>
                     </tr>
-                    <tr>
+                    <tr class="trArrival" distCity="Paris">
                         <td><img src="https://clck.ru/9by6e" width="20" alt="Лого Прилет"></td>
                         <td>1363</td>
                         <td>Air France</td>
@@ -71,7 +75,7 @@
                         <td>A</td>
                         <td><em>Ожидается в 18:00</em></td>
                     </tr>
-                    <tr>
+                    <tr class="trArrival" distCity="Yekaterinburg">
                         <td><img src="https://clck.ru/9by6e" width="20" alt="Лого Прилет"></td>
                         <td>3507</td>
                         <td>Ural Airlines</td>
@@ -82,7 +86,7 @@
                         <td>B</td>
                         <td><em>Ожидается в 18:00</em></td>
                     </tr>
-                    <tr>
+                    <tr class="trDepart" distCity="Sochi">
                         <td><img src="https://clck.ru/9by6Z" width="20" alt="Лого Вылет"></td>
                         <td>205</td>
                         <td>Победа</td>
@@ -93,7 +97,7 @@
                         <td>B</td>
                         <td><em>Посадка закончена</em></td>
                     </tr>
-                    <tr>
+                    <tr class="trDepart" distCity="Yekaterinburg">
                         <td><img src="https://clck.ru/9by6Z" width="20" alt="Лого Вылет"></td>
                         <td>3505</td>
                         <td>Aegean Airlines</td>
@@ -104,7 +108,7 @@
                         <td>B</td>
                         <td><em>Посадка закончена</em></td>
                     </tr>
-                    <tr>
+                    <tr class="trDepart" distCity="Samara">
                         <td><img src="https://clck.ru/9by6Z" width="20" alt="Лого Вылет"></td>
                         <td>6839</td>
                         <td>ЮТэйр</td>
@@ -115,7 +119,7 @@
                         <td>C</td>
                         <td><em>Идет посадка</em></td>
                     </tr>
-                    <tr>
+                    <tr class="trArrival" distCity="Helsinki">
                         <td><img src="https://clck.ru/9by6e" width="20" alt="Лого Прилет"></td>
                         <td>1605</td>
                         <td>Finnair</td>
@@ -126,7 +130,7 @@
                         <td>A</td>
                         <td><em>Ожидается в 18:30</em></td>
                     </tr>
-                    <tr>
+                    <tr class="trArrival" distCity="Yerevan">
                         <td><img src="https://clck.ru/9by6e" width="20" alt="Лого Прилет"></td>
                         <td>30</td>
                         <td>Ural Airlines</td>
@@ -137,7 +141,7 @@
                         <td>A</td>
                         <td><em>Ожидается в 18:40</em></td>
                     </tr>
-                    <tr>
+                    <tr class="trDepart" distCity="Bishkek">
                         <td><img src="https://clck.ru/9by6Z" width="20" alt="Лого Вылет"></td>
                         <td>299</td>
                         <td>Ural Airlines</td>
@@ -148,7 +152,7 @@
                         <td>A</td>
                         <td><em>Идет посадка</em></td>
                     </tr>
-                    <tr>
+                    <tr class="trArrival" distCity="Prague">
                         <td><img src="https://clck.ru/9by6e" width="20" alt="Лого Прилет"></td>
                         <td>9055</td>
                         <td>Czech Airlines</td>
@@ -159,7 +163,7 @@
                         <td>A</td>
                         <td><em>Ожидается в 18:50</em></td>
                     </tr>
-                    <tr>
+                    <tr class="trArrival" distCity="Sankt-Peterburg">
                         <td><img src="https://clck.ru/9by6e" width="20" alt="Лого Прилет"></td>
                         <td>124</td>
                         <td>Аэрофлот</td>
@@ -170,7 +174,7 @@
                         <td>F</td>
                         <td><em>Ожидается в 18:50</em></td>
                     </tr>
-                    <tr>
+                    <tr class="trDepart" distCity="Yekaterinburg">
                         <td><img src="https://clck.ru/9by6Z" width="20" alt="Лого Вылет"></td>
                         <td>749</td>
                         <td>El Al</td>
@@ -181,7 +185,7 @@
                         <td>B</td>
                         <td><em>Регистрация 101–110</em></td>
                     </tr>
-                    <tr>
+                    <tr class="trDepart" distCity="Novosibirsk">
                         <td><img src="https://clck.ru/9by6Z" width="20" alt="Лого Вылет"></td>
                         <td>3516</td>
                         <td>Аэрофлот</td>
@@ -192,7 +196,7 @@
                         <td>B</td>
                         <td><em>Регистрация 115–116</em></td>
                     </tr>
-                    <tr>
+                    <tr class="trArrival" distCity="Ulan-Ude">
                         <td><img src="https://clck.ru/9by6e" width="20" alt="Лого Прилет"></td>
                         <td>6405</td>
                         <td>Аэрофлот</td>
@@ -205,20 +209,29 @@
                     </tr>
                 </tbody>
             </table>
+      
             <p><strong>Введите ваши данные для получения информации о рейсе:</strong></p>
             <form method="post">
                 <input
+                    id="inputEmail"
+                    tabindex="2"
                     type="email"
                     placeholder="email"
                     required>
+                    <label for="inputTel">маска для ввода: логин@домен</label><br>
                 <input
-                    type="tel" pattern="+7([0-9]{3})[0-9]{3}-[0-9]{2}-[0-9]{2}"
-                    placeholder="+7(ХХХ)ХХХ-ХХ-ХХ"
+                    id="inputTel"
+                    tabindex="3"
+                    type="tel" pattern="\+\s?\d{1,4}\(\d{3}\)\d{3}-\d{2}-\d{2}$"
+                    placeholder="номер телефона"
                     required>
-                <button type="submit">Отправить данные о рейсе на телефон</button>
+                <label for="inputTel">маска для ввода: +X(XXX)ХХХ-ХХ-ХХ, например: +7(888)888-77-77</label><br>
+                <button type="submit" id="submitButton">Отправить данные о рейсе на телефон</button>
+                <label for="submitButton" class="submitButton" disabled>Отправить данные о рейсе на телефон</label>
             </form>
         </section>
         <footer>
+            © Шереметьево компани
         </footer>
     </body>
 </html>
