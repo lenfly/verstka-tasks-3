@@ -39,9 +39,16 @@ td/*Ячейки tbody*/
     position: relative;
 }
 
-tr:nth-child(even)
+tr:nth-child(even) td::before /*Нечетные строки табло*/
 {
+    position: absolute;
+    content: '';
     background: #f0eeeb;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: -2; 
 }
 
 tbody tr:hover::after/*Строки*/
@@ -53,7 +60,7 @@ tbody tr:hover::after/*Строки*/
     width: 100%; 
     height: 35px;
     left: 0;
-    z-index: -2;
+    z-index: -1;
 }
 
 td:hover::after/*Столбцы*/
@@ -63,7 +70,8 @@ td:hover::after/*Столбцы*/
     position: absolute;
     background-color: #fce5c7;
     width: 100%;
-    height: 550px;
+    height: 5000px;
+    top: -2000px;
     z-index: -1;
 }
 
@@ -144,7 +152,6 @@ label[class="submitButton"]
     margin: 2px;
     padding: 4px;
     background-color: #dedede;
-    text-transform: capitalize; 
     border: 1px solid #bbb;
     border-radius: 5px;
     box-shadow: 0 1px 0 #bbb;
